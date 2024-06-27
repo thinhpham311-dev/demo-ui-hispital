@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý bệnh viện</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="./css/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar bg-white " style="--bs-breadcrumb-divider: '>';">
+                <div class="container-fluid">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <h5>Quản lý bệnh viện</h5>
+                        </li>
+                        <li class="breadcrumb-item"><a href="/index.html">Danh sách bệnh viện</a></li>
+                        <li class="breadcrumb-item"><a href="/create.html"> Thêm mới bệnh viện</a>
+                        </li>
+                    </ol>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <ul class="nav nav-pills mb-3 border  border-light-subtle rounded-2" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true">Thông tin chung</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">Cấu hình bệnh viện</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Template</button>
+                </li>
+            </ul>
+            <form action="#">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active py-3" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab" tabindex="0">
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item mb-3">
+                                <div class="row my-3  row-gap-4 justify-content-between">
+                                    <div class=" col-lg-3 col-md-12">
+                                        <div class="row align-items-center">
+                                            <label for="staticId" class=" col-4 ">ID:</label>
+                                            <div class="col-8">
+                                                <input type="text" class="form-control" id="tenBenhVien"
+                                                    name="tenBenhVien" placeholder="Nhập ID">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="row align-items-center  ">
+                                            <label for="staticId" class=" col-4 ">Tên bệnh viện:</label>
+                                            <div class="col-8">
+                                                <input type="text" class="form-control" id="diaChi" name="diaChi"
+                                                    placeholder="Nhập tên bệnh viện">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-12 ">
+                                        <div class=" row align-items-center  ">
+
+                                            <label for="staticId" class="col-4 ">Điện thoại:</label>
+
+                                            <div class="col-8">
+                                                <input type="text" class="form-control" id="dienThoai" name="dienThoai"
+                                                    placeholder="Nhập số điện thoại">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class=" row ">
+                                            <label for="staticId" class="col-4">Mã bệnh viện:</label>
+                                            <div class="col-8">
+                                                <input type="number" class="form-control" id="dienThoai"
+                                                    name="dienThoai" placeholder="Nhập mã bệnh viện">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class=" row ">
+                                            <label for="staticId" class="col-4">Địa chỉ:</label>
+                                            <div class="col-8">
+                                                <input type="text" class="form-control" id="dienThoai" name="dienThoai"
+                                                    placeholder="Nhập địa chỉ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row ">
+                                            <label for="staticId" class="col-4">Description:</label>
+                                            <div class="col-8">
+                                                <input type="text" class="form-control" id="dienThoai" name="dienThoai"
+                                                    placeholder="Nhập description">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item ">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3>Chức năng</h3>
+                                    </div>
+                                    <div class="col-12 my-3">
+                                        <div class="row  my-3 row-gap-4 justify-content-between">
+                                            <div class="col-lg-3 col-md-12 ">
+                                                <div class="row  align-items-center  ">
+                                                    <label for="staticId" class="col-4 "> Gói ID:</label>
+                                                    <div class="col-8">
+                                                        <input type="text" readonly class="form-control"
+                                                            placeholder="Nhập ID gói" id="staticId">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-12 ">
+                                                <div class="row  align-items-center  ">
+                                                    <label for="staticNameTicket" class="col-4  ">Tên
+                                                        gói:</label>
+                                                    <div class="col-8">
+                                                        <input type="text" readonly class="form-control"
+                                                            placeholder="Nhập tên gói" id="staticNameTicket">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-12 ">
+                                                <div class="row  align-items-center  ">
+                                                    <label for="staticStartDate" class="col-4 ">Ngày hiệu
+                                                        lực:</label>
+                                                    <div class="col-8">
+                                                        <input type="date" readonly class="form-control"
+                                                            id="staticStartDate">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=" col-lg-3 col-md-12  ">
+                                                <div class="row  align-items-center">
+                                                    <label for="staticEndDate" class="col-4 ">Ngày hết
+                                                        hiệu
+                                                        lực:</label>
+                                                    <div class="col-8">
+                                                        <input type="date" readonly class="form-control"
+                                                            id="staticEndDate">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h3 class="fw-bold fst-italic mb-4">Chức năng trên kiosk tiếp đón</h3>
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckChecked" checked>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked">Đăng ký
+                                                        khám
+                                                        bệnh</label>
+                                                </div>
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckChecked1" checked>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked1">Lấy số
+                                                        khám ưu
+                                                        tiên</label>
+                                                </div>
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckChecked2" checked>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked2">Thanh
+                                                        toán
+                                                        cận
+                                                        lâm
+                                                        sàng</label>
+                                                </div>
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckChecked3" checked>
+                                                    <label class="form-check-label"
+                                                        for="flexSwitchCheckChecked3">Check-in</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h3 class="fw-bold fst-italic mb-4 ">Chức năng trên mini kiosk</h3>
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckChecked4" checked>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked4">Thanh
+                                                        toán
+                                                        cận
+                                                        lâm
+                                                        sàng</label>
+                                                </div>
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckChecked5" checked>
+                                                    <label class="form-check-label"
+                                                        for="flexSwitchCheckChecked5">Check-in</label>
+                                                </div>
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                        id="flexSwitchCheckChecked6" checked>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked6">Gợi ý
+                                                        hành
+                                                        trình</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="tab-pane fade py-3" id="pills-profile" role="tabpanel"
+                        aria-labelledby="pills-profile-tab" tabindex="0">
+                        <div class="row row-gap-4 ">
+                            <div class="col-12">
+                                <div class=" row ">
+                                    <label for="staticId" class="col-4">His Core Services:</label>
+                                    <div class="col-8">
+                                        <input type="number" class="form-control" id="dienThoai" name="dienThoai"
+                                            placeholder="Nhập mã bệnh viện">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class=" row ">
+                                    <label for="staticId" class="col-4">Term and Condition ID:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="dienThoai" name="dienThoai"
+                                            placeholder="Nhập địa chỉ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="staticId" class="col-4">Tên thu ngân:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="dienThoai" name="dienThoai"
+                                            placeholder="Nhập description">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="staticId" class="col-4">Disable check SSL:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="dienThoai" name="dienThoai"
+                                            placeholder="Nhập description">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="staticId" class="col-4">His base address:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="dienThoai" name="dienThoai"
+                                            placeholder="Nhập description">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade py-3" id="pills-contact" role="tabpanel"
+                        aria-labelledby="pills-contact-tab" tabindex="0">
+                        <div class="row row-gap-4 ">
+                            <div class="col-12">
+                                <div class=" row ">
+                                    <label for="templateID" class="col-4">Template ID:</label>
+                                    <div class="col-8">
+                                        <input type="number" class="form-control" id="templateID" name="templateID"
+                                            placeholder="Nhập tempate ID">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class=" row ">
+                                    <label for="headerlogo" class="col-4">Header logo:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="headerlogo" name="headerlogo"
+                                            placeholder="Nhập header logo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="slogan" class="col-4">Slogan:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="slogan" name="slogan"
+                                            placeholder="Nhập slogan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="sloganfontsize" class="col-4">Slogan font size:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="sloganfontsize"
+                                            name="sloganfontsize" placeholder="Nhập slogan font size ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="sloganfontcolor" class="col-4">Slogan font color:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="sloganfontcolor"
+                                            name="sloganfontcolor" placeholder="Nhập slogan font color">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="background" class="col-4">Back ground:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="background" name="background"
+                                            placeholder="Nhập back ground">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="backgroundheader" class="col-4">Back ground header:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="backgroundheader"
+                                            name="backgroundheader" placeholder="Nhập description">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="backgrounduppercolorhex" class="col-4">Back ground upper color
+                                        hex:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="backgrounduppercolorhex"
+                                            name="backgrounduppercolorhex" placeholder="Nhập Back ground upper color">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row ">
+                                    <label for="staticId" class="col-4">Back ground lower color hex:</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="backgroundlowercolorhex"
+                                            name="backgroundlowercolorhex"
+                                            placeholder="Nhập Back ground lower color hex">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center flex-wrap gap-4 my-5">
+                        <button class="btn btn-outline-primary btn-lg" style="max-width: 100%; width: 200px;"
+                            type="button">Hủy</button>
+                        <button class="btn btn-primary btn-lg" style="max-width: 100%; width: 200px;" type="button">
+                            Thêm mới</button>
+                    </div>
+            </form>
+
+    </div>
+
+    </main>
+    <footer>
+        <p class="text-center p-3">&copy; 2024 Công ty Cổ phần Công nghệ Y tế Việt Nam</p>
+    </footer>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
